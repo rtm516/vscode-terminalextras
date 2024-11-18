@@ -1,8 +1,8 @@
 {
   "name": "terminalextras",
-  "displayName": "TerminalExtras",
+  "displayName": "Terminal Extras",
   "description": "Adds some extra features around the terminal",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "publisher": "rtm516",
   "icon": "images/logo.png",
   "engines": {
