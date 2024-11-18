@@ -1,0 +1,83 @@
+{
+  "name": "terminalextras",
+  "displayName": "TerminalExtras",
+  "description": "Adds some extra features around the terminal",
+  "version": "1.0.0",
+  "publisher": "rtm516",
+  "icon": "images/logo.png",
+  "engines": {
+    "vscode": "^1.95.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "Terminal",
+    "Shell",
+    "Bash",
+    "CMD",
+    "powershell"
+  ],
+  "bugs": {
+    "url": "https://github.com/rtm516/vscode-terminalextras/issues"
+  },
+  "homepage": "https://github.com/rtm516/vscode-terminalextras/blob/master/README.md",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rtm516/vscode-terminalextras.git"
+  },
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "terminalextras.open",
+        "title": "Open in Integrated Terminal"
+      },
+      {
+        "command": "terminalextras.toggle",
+        "title": "Toggle Integrated Terminal"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "terminalextras.open",
+        "key": "ctrl+alt+o"
+      },
+      {
+        "command": "terminalextras.toggle",
+        "key": "ctrl+alt+t"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "when": "!inOutput",
+          "command": "terminalextras.open",
+          "group": "navigation@1"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.95.0",
+    "@types/mocha": "^10.0.9",
+    "@types/node": "20.x",
+    "@typescript-eslint/eslint-plugin": "^8.10.0",
+    "@typescript-eslint/parser": "^8.7.0",
+    "eslint": "^9.13.0",
+    "typescript": "^5.6.3",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1"
+  }
+}
